@@ -1,0 +1,27 @@
+### Nginx
+<source>
+  @type tail
+  format nginx
+  path {{ main_nginx_error_log }}
+  pos_file /var/log/td-agent/nginx-main-error.pos
+  read_from_head true
+  tag graylog2.nginx.main.error
+</source>
+
+<source>
+  @type tail
+  format nginx
+  path {{ website_nginx_access_log }}
+  pos_file /var/log/td-agent/nginx-website-access.pos
+  read_from_head true
+  tag graylog2.nginx.website.access
+</source>
+
+<source>
+  @type tail
+  format nginx
+  path {{ website_nginx_error_log }}
+  pos_file /var/log/td-agent/nginx-website-error.pos
+  read_from_head true
+  tag graylog2.nginx.website.error
+</source>

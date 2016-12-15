@@ -1,0 +1,14 @@
+##### Send to graylog
+
+<match graylog2.**>
+  @type copy
+  <store>
+    @type gelf
+    host {{ graylog_server_ip }}
+    port {{ graylog_gelf_port }}
+    flush_interval 5s
+  </store>
+  <store>
+    @type stdout
+  </store>
+</match>

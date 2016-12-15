@@ -1,0 +1,27 @@
+### PHP-FPM
+<source>
+  @type tail
+  format none
+  path {{ php_fpm_error_log }}
+  pos_file /var/log/td-agent/php-fpm-error.pos
+  read_from_head true
+  tag graylog2.php-fpm.error
+</source>
+
+<source>
+  @type tail
+  format none
+  path {{ opcache_error_log }}
+  pos_file /var/log/td-agent/opcache-error.pos
+  read_from_head true
+  tag graylog2.opcache.error
+</source>
+
+<source>
+  @type tail
+  format none
+  path {{ opcache_access_log }}
+  pos_file /var/log/td-agent/opcache-access.pos
+  read_from_head true
+  tag graylog2.opcache.access
+</source>

@@ -1,0 +1,20 @@
+---
+# Global
+ubuntu_version: xenial
+
+# Nginx
+main_nginx_error_log: /var/log/nginx/nginx-error.log
+website_nginx_error_log: /var/www/website.com/logs/nginx-error.log
+website_nginx_access_log: /var/www/website.com/logs/nginx-access.log
+
+# HHVM
+hhvm_error_log: /var/log/hhvm/error.log
+
+# PHP-FPM
+php_fpm_error_log: /var/log/php/php-fpm.log
+opcache_access_log: /var/log/php/opcache-access.log
+opcache_error_log: /var/log/php/opcache-error.log
+
+# MySQL
+mysql_error_log: /var/log/mysql/mysql-error.log
+mysql_slow_query_log: /var/log/mysql/mysql-slow.log

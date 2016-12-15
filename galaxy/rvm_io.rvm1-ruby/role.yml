@@ -1,0 +1,5 @@
+---
+- name: Configure servers with ruby support
+  hosts: all
+  roles:
+    - { role: rvm_io.rvm1-ruby, tags: ruby, become: yes }

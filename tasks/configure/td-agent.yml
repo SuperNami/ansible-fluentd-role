@@ -1,0 +1,8 @@
+---
+- name: copy td-agent configuration
+  template: src=templates/td-agent/td-agent.conf.j2
+            dest=/etc/td-agent/td-agent.conf
+            owner=root
+            group=root
+            mode=0644
+  notify: restart td-agent

@@ -1,0 +1,15 @@
+---
+- name: download fluentd
+  get_url: url=http://packages.treasuredata.com.s3.amazonaws.com/2/ubuntu/xenial/pool/contrib/t/td-agent/td-agent_{{ td_agent_version }}_amd64.deb
+           dest=/opt/td-agent_{{ td_agent_version }}_amd64.deb
+           force=no
+
+
+- name: install fluentd
+  apt: deb=/opt/td-agent_{{ td_agent_version }}_amd64.deb
+       state=present
+
+
+- name: remove fluentd deb file
+  file: path=/opt/td-agent_{{ td_agent_version }}_amd64.deb
+        state=absent

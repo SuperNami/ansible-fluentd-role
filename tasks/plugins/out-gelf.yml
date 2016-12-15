@@ -1,0 +1,9 @@
+---
+- name: install gelf gem
+  command: /usr/sbin/td-agent-gem install gelf creates=/etc/td-agent/plugin/out_gelf.rb
+
+
+- name: download fluent gelf plugin
+  get_url: url=https://raw.githubusercontent.com/emsearcy/fluent-plugin-gelf/master/lib/fluent/plugin/out_gelf.rb
+           dest=/etc/td-agent/plugin/out_gelf.rb
+           force=no

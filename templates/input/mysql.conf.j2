@@ -1,0 +1,18 @@
+### MySQL
+<source>
+  @type tail
+  format none
+  path {{ mysql_error_log }}
+  pos_file /var/log/td-agent/mysql-error.pos
+  read_from_head true
+  tag graylog2.mysql.error
+</source>
+
+<source>
+  @type tail
+  format none
+  path {{ mysql_slow_query_log }}
+  pos_file /var/log/td-agent/mysql-slow-query.pos
+  read_from_head true
+  tag graylog2.mysql.slow-query
+</source>

@@ -1,0 +1,9 @@
+### HHVM
+<source>
+  @type tail
+  format none
+  path {{ hhvm_error_log }}
+  pos_file /var/log/td-agent/hhvm-error.pos
+  read_from_head true
+  tag graylog2.hhvm.error
+</source>

@@ -1,0 +1,13 @@
+---
+- name: fluentd
+  hosts: all
+  user: root
+  become: true
+  roles:
+  - fluentd
+  vars_files:
+  - vars/local.yml
+  - vars/paths.yml
+  - vars/versions.yml
+  - vars/secrets.yml
+  - vars/vault.yml

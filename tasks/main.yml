@@ -1,0 +1,33 @@
+---
+- include: td-agent/install-deb.yml
+  tags: install_td_agent_deb
+
+- include: td-agent/install-repo.yml
+  tags: install_td_agent_repo
+
+- include: td-agent/remove.yml
+  tags: remove_td_agent
+
+- include: plugins/out-gelf.yml
+  tags: install_gelf_plugin
+
+- include: configure/rsyslog.yml
+  tags: configure_rsyslog
+
+- include: configure/td-agent.yml
+  tags: configure_td_agent
+
+- include: configure/input.yml
+  tags: configure_input
+
+- include: configure/output.yml
+  tags: configure_output
+
+- include: configure/permissions.yml
+  tags: logs_permissions
+
+- include: fluentd/install-ui.yml
+  tags: install_fluentd_ui
+
+- include: fluentd/start-ui.yml
+  tags: start_fluentd_ui

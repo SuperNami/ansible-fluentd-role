@@ -1,0 +1,21 @@
+---
+- name: install treasure data key to keyring
+  apt_key: url=https://packages.treasuredata.com/GPG-KEY-td-agent
+           validate_certs=false
+           state=present
+
+
+- name: add treasure data repository
+  apt_repository: repo='deb http://packages.treasuredata.com/2/ubuntu/{{ ubuntu_version }}/ {{ ubuntu_version }} contrib'
+                  state=present
+                  mode=644
+
+
+- name: install td-agent
+  apt: pkg={{ item }}
+       update_cache=yes
+       state=latest
+       force=yes
+
+  with_items:
+  - td-agent

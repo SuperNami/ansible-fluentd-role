@@ -1,0 +1,116 @@
+---
+- name: copy apt input configuration
+  template: src=templates/input/apt.conf
+            dest=/etc/td-agent/config.d/apt.conf
+            owner=root
+            group=root
+            mode=0644
+  notify: restart td-agent
+  tags: input_apt
+
+
+- name: copy audit input configuration
+  template: src=templates/input/audit.conf
+            dest=/etc/td-agent/config.d/audit.conf
+            owner=root
+            group=root
+            mode=0644
+  notify: restart td-agent
+  tags: input_audit
+
+
+- name: copy chrony input configuration
+  template: src=templates/input/chrony.conf
+            dest=/etc/td-agent/config.d/chrony.conf
+            owner=root
+            group=root
+            mode=0644
+  notify: restart td-agent
+  tags: input_chrony
+
+
+- name: copy fail2ban input configuration
+  template: src=templates/input/fail2ban.conf
+            dest=/etc/td-agent/config.d/fail2ban.conf
+            owner=root
+            group=root
+            mode=0644
+  tags: input_fail2ban
+
+
+- name: copy hhvm input configuration
+  template: src=templates/input/hhvm.conf
+            dest=/etc/td-agent/config.d/hhvm.conf
+            owner=root
+            group=root
+            mode=0644
+  notify: restart td-agent
+  tags: input_hhvm
+
+
+- name: copy lynis input configuration
+  template: src=templates/input/lynis.conf
+            dest=/etc/td-agent/config.d/lynis.conf
+            owner=root
+            group=root
+            mode=0644
+  tags: input_lynis
+
+
+- name: copy mysql input configuration
+  template: src=templates/input/mysql.conf.j2
+            dest=/etc/td-agent/config.d/mysql.conf.j2
+            owner=root
+            group=root
+            mode=0644
+  notify: restart td-agent
+  tags: input_mysql
+
+
+- name: copy nginx input configuration
+  template: src=templates/input/nginx.conf.j2
+            dest=/etc/td-agent/config.d/nginx.conf
+            owner=root
+            group=root
+            mode=0644
+  notify: restart td-agent
+  tags: input_nginx
+
+
+- name: copy php-fpm input configuration
+  template: src=templates/input/php-fpm.conf.j2
+            dest=/etc/td-agent/config.d/php-fpm.conf
+            owner=root
+            group=root
+            mode=0644
+  tags: input_php_fpm
+
+
+- name: copy rsyslog input configuration
+  template: src=templates/input/rsyslog.conf.j2
+            dest=/etc/td-agent/config.d/rsyslog.conf
+            owner=root
+            group=root
+            mode=0644
+  notify: restart td-agent
+  tags: input_rsyslog
+
+
+- name: copy syslog input configuration
+  template: src=templates/input/syslog.conf
+            dest=/etc/td-agent/config.d/syslog.conf
+            owner=root
+            group=root
+            mode=0644
+  notify: restart td-agent
+  tags: input_syslog
+
+
+- name: copy unattended upgrades input configuration
+  template: src=templates/input/unattended-upgrades.conf
+            dest=/etc/td-agent/config.d/unattended-upgrades.conf
+            owner=root
+            group=root
+            mode=0644
+  notify: restart td-agent
+  tags: input_unattended_upgrades

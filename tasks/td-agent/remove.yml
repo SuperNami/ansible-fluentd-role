@@ -1,0 +1,7 @@
+---
+- name: remove td-agent
+  apt: pkg={{ item }}
+       state=absent
+
+  with_items:
+  - td-agent

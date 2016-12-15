@@ -1,0 +1,19 @@
+<source>
+  @type tail
+  format none
+  path /var/log/td-agent/td-agent.log
+  pos_file /var/log/td-agent/td-agent.pos
+  read_from_head true
+  tag graylog2.td-agent
+</source>
+
+<source>
+  @type tail
+  format none
+  path /var/log/td-agent/td-agent-ui.log
+  pos_file /var/log/td-agent/td-agent-ui.pos
+  read_from_head true
+  tag graylog2.td-agent.ui
+</source>
+
+@include config.d/*.conf

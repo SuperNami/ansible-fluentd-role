@@ -1,0 +1,4 @@
+---
+- name: install fluentd ui
+  gem: name=fluentd-ui
+       state=latest

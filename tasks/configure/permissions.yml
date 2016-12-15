@@ -1,0 +1,6 @@
+---
+- name: change nginx logs location owner
+  file: path=/var/log/nginx
+        owner=td-agent
+        group=td-agent
+        mode=755

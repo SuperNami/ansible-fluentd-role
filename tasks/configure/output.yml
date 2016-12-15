@@ -1,0 +1,9 @@
+---
+- name: copy graylog output configuration
+  template: src=templates/output/graylog.conf.j2
+            dest=/etc/td-agent/config.d/graylog.conf
+            owner=root
+            group=root
+            mode=0644
+  notify: restart td-agent
+  tags: output_graylog
