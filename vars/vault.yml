@@ -1,7 +1,0 @@
----
-# Graylog
-vault_graylog_server_ip: 
-vault_graylog_gelf_port:
-
-# Rsyslog
-vault_rsyslog_port:
